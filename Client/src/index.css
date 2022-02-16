@@ -7,9 +7,10 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #e8e7e7; 
   font-family: arial;
-  min-width: 300px;
-  background:#e8e7e7;
+  text-transform: uppercase;
+  min-width: 320px;
 }
 
 .center {
@@ -22,57 +23,6 @@ input[type=submit]:hover {
   color: #44338D;
   cursor: pointer;
 }
-
-.main button {
-  background: #003568; 
-  color: #fff;
-  font-family: 'Bebas Neue', cursive;
-
-}
-
-
-a {
-  text-decoration: inherit;
-  color: inherit;
-  font-weight:bolder;
-  color: #003568;
-}
-/* ------------------------Layout------------------------- */
-
-.default-layout {
-  display: gird;
-  grid-template-rows: 80px auto 3rem;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-}
-
-.default-layout button {
-  margin-right: 10px;
-}
-
-header {
-  grid-area: header;
-}
-
-main {
-  grid-area: main;
-  min-height: 88vh;
-}
-
-footer {
-  grid-area: footer;
-  background: #003568;
-  padding: 1rem;
-  color: white;
-}
-
-.breadcrumb {
-  margin-top: 20px;  
-}
-
-
 /*--------------------------------- Navigation -------------------------------*/
 
 #nav {
@@ -92,24 +42,21 @@ footer {
 }
 
 .nav {
-
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   font-family: 'Bebas Neue', cursive;
   font-size: 2rem;
 }
 
 .nav-link {
-  font-family: 'Bebas Neue', cursive;
-  font-size: 2rem;
-  padding-left: 10px !important;
+  color: inherit; 
+  text-decoration: inherit;
+
 }
-
-
 
 .logo {
   font-family: 'Bebas Neue', cursive;
-  font-size: 2.5rem;
-  padding: 10px
 }
 
 .nav-right {
@@ -124,18 +71,13 @@ footer {
   max-width:800px;
 }
 
-
-/*-------------------------------------- Search Form------------------------------------ */
-
-.dash-form , .search-info{
+form {
   background-color: #003568;
   width: 100%;
-  max-width: 1320px;
-  color: #fff;
-  border-radius: 10px 10px 0 0;
+  max-width: 768px;
 }
 
-.dash-form  input[type=text] {
+input[type=text] {
   flex-grow: 1;
   border-width: 0 0 1px 0;
   margin: 15px 10px 15px 15px;
@@ -150,16 +92,16 @@ footer {
   outline: none;
 } 
 
-.dash-form input[type=text]::-webkit-input-placeholder{
+input[type=text]::-webkit-input-placeholder{
   color: #E2DFD2;
   letter-spacing: 2px;
 }
 
-.dash-form input[type=text]:focus{
+input[type=text]:focus{
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.dash-form  input[type=submit], .dash-form button {
+input[type=submit] {
   display: block;
   font-size: .6em;
   margin: 15px 15px 15px 0; 
@@ -173,75 +115,127 @@ footer {
   text-shadow: none;
   text-transform: uppercase;
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-.dash-form  button, .exam-btn, .table-button,
-.add-button {
+button,
+.exam-btn,
+input[type=submit] {
   outline: none;
   transition: background-color 0.2s ease,
-  color 0.2s ease !important;
-}
-
-.add-button {
-  background: #6fb8ff !important;
+              color 0.2s ease;
 }
 
 .search-form {
   display: flex;
 }
 
-.search-info {
-  font-size: 2rem;
+/* ---------------------------Exams-------------------------------*/
+.exams {
+  background: #004282;
+  width: 95vw;
+  margin: 50px auto 0px;
+  box-shadow: 0 5px 0 rgb(172, 185, 199);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  overflow: hidden;
+}
+
+header {
+  color: #FFF;
+  height: 75px;
+  padding: 5px 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: #8063FA;
+  border-bottom: solid 2px #D4CAFF;
+}
+
+header h1 {
+  flex-grow: 1;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+.exam-results {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.exam {
+  display:flex;
+  flex-direction: column;
+  font-size: 10px;
+  border-radius: 20px;
   font-family: 'Bebas Neue', cursive;
-}
-
-  /*-------------------------------- Table -----------------------------*/  
-  thead, tbody, tfoot, tr, td, th {
-    border: none;
-  }
-
-  th {
-    background: #003568;
-  }
-  .table-row {
-    background: #fff;
-  }
-  .table-head {
-    background:#003568;
-    color: #fff;
-  }
-
-  .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-    background-color: #eff7ff;
- }
-
- .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-  background-color: #6fb8ff;
+  background: #003568;
   color: white;
-  font-weight:bolder;
+  height: 300px;
+  width: 300px;
+  margin: 15px;
 }
 
-  .table-button {
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-family: 'Bebas Neue', cursive;
+.exam-info-bottom,
+.exam-info-right {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.exam-info-top{
+  display: flex;
+  flex-direction: row;
+}
+
+.exam-info-right {
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 1.5rem;
+}
+
+  .player:last-of-type {
+    border-bottom-color: #D4CAFF;
   }
 
-  .table-button:hover, 
-  .add-button:hover {
-    background: #fff !important ;
-    color: #003568 !important;
+  .player-name:hover .remove-player {
+    visibility: visible;
+  }
+
+  .exam-find {
+    font-size: 16px;
+  }
+
+  .exam img {
+    height: 150px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .exam-name {
+    font-size: 2rem;
+  }
+
+
+  .exam-btn {
+    background: #002242;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    align-self: center;
+    text-align: center;
+    width: 70%;
+    font-size: 1.5rem;
     cursor: pointer;
   }
 
-  td {
-    width: 25%;
+  .exam-btn:hover {
+    color: #002242;
+    background: #fff;
   }
-  
-  .table > tbody > tr > td,
-  .table > thead > tr > th {
-    vertical-align: middle;
-}
+
+
+
+
 
